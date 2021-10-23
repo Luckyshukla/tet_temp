@@ -11,10 +11,6 @@ from time import sleep
 from selenium.webdriver.remote.webelement import WebElement
 
 import credentials.test_credentials
-from decouple import config
-
-API_USERNAME = config('USER')
-API_KEY = config('KEY')
 
 def test_login_page():
     # i = 0
@@ -22,8 +18,8 @@ def test_login_page():
     chrome_driver = webdriver.Chrome()
     chrome_driver.get('https://careers.neuralcompany.work/app/login')
     chrome_driver.maximize_window()
-    user = config('USER')
-    #user = credentials.test_credentials.username()
+    #user = config('USER')
+    user = credentials.test_credentials.username()
     password = credentials.test_credentials.password()
     each_iteration_sleep = credentials.test_credentials.sleep_time_each_iteration()
     final_wait_time = credentials.test_credentials.total_wait()
